@@ -14,6 +14,10 @@ const UseEffectFetchData = () => {
     getUsers()
   }, [])
 
+  const handleRemove =(id)=>{
+   let newUsers =  users.filter(user=> user.id !== id)
+   setUsers(newUsers)
+  }
   return <>
     <h3>Github Users</h3>
     <ul className="users">
@@ -23,8 +27,9 @@ const UseEffectFetchData = () => {
          <img src={avatar_url} alt={login}/>
          <div>
          <h4>{login}</h4>
-         <a href={html_url}></a>
+         <a href={html_url}>Profile</a>
          </div>
+         <button className="btn" onClick={()=>handleRemove(id)}>remove</button>
       </li>
       
     })}
