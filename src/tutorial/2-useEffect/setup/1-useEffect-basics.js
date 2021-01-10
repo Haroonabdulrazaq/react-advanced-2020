@@ -13,7 +13,7 @@ const UseEffectBasics = () => {
     useEffect(()=>{
       if(value > 0){
     document.title = `New Messages (${value})`}
-  },[])
+  },[value])
   return <>
       <h2>{value}</h2>
       <button className="btn" onClick={handleIncrease}>click me</button>
