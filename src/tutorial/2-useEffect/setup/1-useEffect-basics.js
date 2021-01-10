@@ -3,7 +3,22 @@ import React, { useState, useEffect } from 'react';
 // cleanup function
 // second parameter
 const UseEffectBasics = () => {
-  return <h2>useEffect Basics</h2>;
+  let [value , setValue] = useState(0)
+  
+  const handleIncrease=()=>{
+     setValue((value)=>value + 1) 
+  }
+
+
+    useEffect(()=>{
+      if(value > 0){
+    document.title = `New Messages (${value})`}
+  },[])
+  return <>
+      <h2>{value}</h2>
+      <button className="btn" onClick={handleIncrease}>click me</button>
+    </>
+  ;
 };
 
 export default UseEffectBasics;
