@@ -30,8 +30,7 @@ const UseEffectFetchData = () => {
          <a href={html_url}>Profile</a>
          </div>
          <button className="btn" onClick={()=>handleRemove(id)}>remove</button>
-      </li>
-      
+      </li>  
     })}
     </ul>
   </>
