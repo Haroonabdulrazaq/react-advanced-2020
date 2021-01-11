@@ -32,8 +32,7 @@ const MultipleReturns = () => {
   }
   if(isError){
     return <>
-      <h1>{isError}</h1>
-     
+      <h1>Oops!, An error occured</h1>
      </>
   }
  
