@@ -12,6 +12,8 @@ const UseRefBasics = () => {
   e.preventDefault();
   setData([...data, refContainer.current.value])
   refContainer.current.value =''
+  // refContainer.current.focus()
+
   }
   return <>
   <h2 style={{margin: "2rem"}}>TodList</h2>
