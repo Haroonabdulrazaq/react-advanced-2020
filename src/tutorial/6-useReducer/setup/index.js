@@ -1,39 +1,10 @@
 import React, { useState, useReducer } from 'react';
 import Modal from './Modal';
+import {reducer }from './reducer';
 // import { data } from '../../../data';
 
 
-const reducer=(state, action)=> {
 
-  switch(action.type){
-    case 'ADD_ITEM':
-    const newPeople = [...state.people, action.payload]
-    return {
-          ...state,
-          people: newPeople,
-          isModalOpen: true,
-          modalContent: "item added"}
-    case 'NO_VALUE':
-      return {
-        ...state,
-        isModalOpen: true,
-        modalContent: "No value added"}
-    case 'CLOSE_MODAL':
-      return {
-        ...state,
-        isModalOpen: false
-      }
-      case 'REMOVE_ITEM':
-      return {
-        ...state,
-        people:  state.people.filter(person => person.id !== action.payload),
-        modalContent: "Item Removed"
-      }
-    default:
-      throw new Error('No matching action type')
-  }
-  
-}
 const defaultState = {
   people: [],
   isModalOpen: false,
@@ -49,7 +20,7 @@ const Index = () => {
     e.preventDefault()
     if(item){
       const newItem = {id: new Date().getTime().toString(), item}
-      console.log(newItem)
+      // console.log(newItem)
       dispatch({
         type: "ADD_ITEM",
         payload: newItem
@@ -68,9 +39,9 @@ const Index = () => {
       type: "CLOSE_MODAL"
     })
   }
-  const handleRemove=(id)=>{
+  // const handleRemove=(id)=>{
 
-  }
+  // }
  
   return <>
    {state.isModalOpen && <Modal closeModal={closeModal} modalContent= {state.modalContent}/>}
