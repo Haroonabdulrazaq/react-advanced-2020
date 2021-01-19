@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/6-useReducer/setup';
+import Setup from './projects/OurTours';
 // import Final from './tutorial/1-useState/final/1-error-example';
 
 function App() {

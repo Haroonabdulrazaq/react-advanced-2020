@@ -1,0 +1,21 @@
+.all-tour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.tour-price{
+  background: rgba(0, 119, 255, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+}
+.single-tour {
+  width: 40rem;
+  height: auto;
+  padding: 2rem;
+}
+
+.tour-img {
+  width: 40rem;
+  height: 30rem;
+}
