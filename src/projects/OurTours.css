@@ -5,14 +5,22 @@
   align-content: center;
 }
 .tour-price{
-  background: rgba(0, 119, 255, 0.5);
+  background: rgba(0, 119, 255, 0.8);
   border-radius: 5px;
   padding: 10px;
 }
 .single-tour {
   width: 40rem;
   height: auto;
+  margin: 0 auto;
   padding: 2rem;
+}
+.tour-info {
+  padding: 1rem;
+}
+.tour-price {
+  color: white;
+  font-weight: 500;
 }
 
 .tour-img {
