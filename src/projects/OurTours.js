@@ -24,7 +24,7 @@ const OurTours = () => {
           setTextContent("read less")
         }else if(tour.id === id  && textContent === "read less" ){
           tour.text = readless.join(" ")
-          setTextContent("read more")
+          setTextContent("read more") 
         }
     })
   }
