@@ -37,7 +37,7 @@ const OurTours = () => {
           <img className="tour-img" src={img_url} alt={heading}/>
           <footer>
             <div className="tour-info">
-            <h3 >{heading}</h3> <span className="tour-price">$ {price}</span>
+            <h4 >{heading}</h4> <span className="tour-price">$ {price}</span>
             <p className="tour-text"> {less} </p>
             <button className="btn" onClick={()=> handleRead(id)}>{textContent}</button>
             </div>
