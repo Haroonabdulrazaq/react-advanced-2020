@@ -4,11 +4,8 @@ import './OurTours.css'
 
 
 const OurTours = () => {
-
   let [tourData, setTourData] = useState(data)
-  // let [readmore, setReadmore] = useState(false)
   let [textContent, setTextContent] = useState("read more")
-
 
   const handleClick =(id)=>{
     let newData = tourData.filter((tour)=> tour.id !== id )
@@ -41,7 +38,7 @@ const OurTours = () => {
           <footer>
             <div className="tour-info">
             <h3 >{heading}</h3> <span className="tour-price">$ {price}</span>
-            <p> {less} </p>
+            <p className="tour-text"> {less} </p>
             <button className="btn" onClick={()=> handleRead(id)}>{textContent}</button>
             </div>
           </footer>
