@@ -1,19 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import { data } from './data';
 import './OurTours.css'
 
+const reducer=(state, action)=>{
+  switch(action.type){
+    case 'REMOVE_ITEM':
+      return {
+        ...state,
+        tourData: state.tourData.filter((tour)=> tour.id !== action.payload )
+      }
+    default: throw new Error("Action type mismatch")
+  }
+}
 
 const OurTours = () => {
-  let [tourData, setTourData] = useState(data)
-  let [textContent, setTextContent] = useState("read more")
 
-  const handleClick =(id)=>{
-    let newData = tourData.filter((tour)=> tour.id !== id )
-    setTourData(newData)
+  const defaultState = {
+    tourData: data
   }
 
-  const handleRead =(id)=>{
-     tourData.filter((tour)=> {
+  // let [tourData, setTourData] = useState(data)
+  let [textContent, setTextContent] = useState("read more")
+
+ const [state, dispatch] = useReducer(reducer, defaultState)
+
+  const handleRemove =(id)=>{
+    // let newData = tourData.filter((tour)=> tour.id !== id )
+    // setTourData(newData)
+    dispatch({type: "REMOVE_ITEM", payload: id})
+  }
+
+  const handleRead =(id)=> {
+     state.tourData.filter((tour)=> {
       let readless = tour.text.split(" ").slice(0)
         if(tour.id === id  && textContent === "read more" ){
           let newText = readless.join(" ")
@@ -29,7 +47,7 @@ const OurTours = () => {
   return (
     <section className="all-tour">
       <h2 className="title">Our Tours</h2>
-      {tourData.map((tour, index)=>{
+      {state.tourData.map((tour, index)=>{
         const {id, heading, img_url, price, text} = tour
         let less = ""
          if(textContent=== "read more" ){less = text.split(" ").slice(0, 25).join(" ")}else{less = text} 
@@ -42,7 +60,9 @@ const OurTours = () => {
             <button className="btn" onClick={()=> handleRead(id)}>{textContent}</button>
             </div>
           </footer>
-            <button className="btn" onClick={()=> handleClick(id)}>Not interested</button>
+            <button className="btn" onClick={()=> 
+             handleRemove(id)}
+              >Not interested</button>
           </div>
       })}
     </section>
