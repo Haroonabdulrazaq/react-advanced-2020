@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from 'react';
+import React, { useReducer} from 'react';
 import { data } from './data';
 import './OurTours.css'
 
@@ -9,6 +9,17 @@ const reducer=(state, action)=>{
         ...state,
         tourData: state.tourData.filter((tour)=> tour.id !== action.payload )
       }
+      case 'READ_MORE':
+        return {
+          ...state,
+          textContent: "read more"   
+        }
+      case 'READ_LESS':
+        return {
+          ...state,
+          textContent: "read less" 
+        }
+
     default: throw new Error("Action type mismatch")
   }
 }
@@ -16,30 +27,31 @@ const reducer=(state, action)=>{
 const OurTours = () => {
 
   const defaultState = {
-    tourData: data
+    tourData: data,
+    textContent: "read more"
   }
 
-  // let [tourData, setTourData] = useState(data)
-  let [textContent, setTextContent] = useState("read more")
+  // let [textContent, setTextContent] = useState("read more")
 
  const [state, dispatch] = useReducer(reducer, defaultState)
 
   const handleRemove =(id)=>{
-    // let newData = tourData.filter((tour)=> tour.id !== id )
-    // setTourData(newData)
     dispatch({type: "REMOVE_ITEM", payload: id})
   }
 
   const handleRead =(id)=> {
      state.tourData.filter((tour)=> {
       let readless = tour.text.split(" ").slice(0)
-        if(tour.id === id  && textContent === "read more" ){
+        if(tour.id === id  && state.textContent === "read more" ){
           let newText = readless.join(" ")
           tour = {...tour, text: newText}
-          setTextContent("read less")
-        }else if(tour.id === id  && textContent === "read less" ){
+          //  setTextContent("read less")
+          dispatch({type:'READ_LESS' })
+          
+        }else if(tour.id === id  && state.textContent === "read less" ){
           tour.text = readless.join(" ")
-          setTextContent("read more") 
+          //  setTextContent("read more") 
+          dispatch({type:'READ_MORE'})
         }
     })
   }
@@ -50,14 +62,14 @@ const OurTours = () => {
       {state.tourData.map((tour, index)=>{
         const {id, heading, img_url, price, text} = tour
         let less = ""
-         if(textContent=== "read more" ){less = text.split(" ").slice(0, 25).join(" ")}else{less = text} 
+         if(state.textContent=== "read more" ){less = text.split(" ").slice(0, 25).join(" ")}else{less = text} 
       return <div key={id} className="single-tour">
           <img className="tour-img" src={img_url} alt={heading}/>
           <footer>
             <div className="tour-info">
             <h4 >{heading}</h4> <span className="tour-price">$ {price}</span>
             <p className="tour-text"> {less} </p>
-            <button className="btn" onClick={()=> handleRead(id)}>{textContent}</button>
+            <button className="btn" onClick={()=> handleRead(id)}>{state.textContent}</button>
             </div>
           </footer>
             <button className="btn" onClick={()=> 
