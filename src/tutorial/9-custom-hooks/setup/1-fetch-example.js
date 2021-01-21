@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import { useFetch } from './2-useFetch'
 
 // ATTENTION!!!!!!!!!!
@@ -15,4 +15,4 @@ const Example = () => {
   )
 }
 
-export default Example
+export default Example;
