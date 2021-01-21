@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 const Error = () => {
   return (
     <div>
-      <h1>Error Page</h1>
+      <h1>Oops!, An error occured</h1>
+      <p>Back to home page</p>
     </div>
   );
 };
