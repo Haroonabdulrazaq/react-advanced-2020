@@ -1,20 +1,27 @@
-import React, {useContext} from 'react';
-import { ProductContext } from './useContext';
+import React from 'react';
+import PropTypes from 'prop-types';
+// import defaultImage from './default-image.jpeg'
 
-const Product = () => {
-
-  const {products} = useContext(ProductContext)
+const Product = ({name, price, image}) => {
  
-
-  return <article className='product'>
-   {products.map((product)=>{
-     const {id, name, image, price} = product
-     return <div key={id} className="item">
-              <img src={image} alt={name} /> 
-              <p>{name}</p><p>{price}</p>
+     return <div  className="product">
+              <img src={image.url} alt={name} />
+              <h4>{name}</h4>
+              <p>$ {price}</p>
             </div>
-   })}
-  </article>;
 };
 
+Product.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  price: PropTypes.number.isRequired
+}
+
+Product.defaultProps = {
+  name: "Product name",
+  price: 0.10,
+  image: {url: "https://dl.airtable.com/.attachments/3245c726ee77d73702ba8c3310639727/f000842b/product-5.jpg"}
+}
+
 export default Product;
+//
