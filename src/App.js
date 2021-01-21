@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/8-useContext/setup/1-context-api';
+import Setup from './tutorial/9-custom-hooks/setup/1-fetch-example';
 // import Final from './tutorial/1-useState/final/1-error-example';
 
 function App() {
@@ -10,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

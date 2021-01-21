@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React  from 'react'
 import { useFetch } from './2-useFetch'
 
 // ATTENTION!!!!!!!!!!
 // I SWITCHED TO PERMANENT DOMAIN
-const url = 'https://course-api.com/javascript-store-products'
+const url = 'https://course-api.com/javascript-store-products';
 
 const Example = () => {
-  const [loading, setLoading] = useState(true)
-  const [products, setProducts] = useState([])
-
-  const getProducts = async () => {
-    const response = await fetch(url)
-    const products = await response.json()
-    setProducts(products)
-    setLoading(false)
-  }
-
-  useEffect(() => {
-    getProducts()
-  }, [url])
+ const {loading, products} = useFetch(url)
   console.log(products)
   return (
     <div>
