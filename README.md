@@ -40,4 +40,10 @@
   ## :camera: Birthday Reminder Screenshot  
   ![screenshot](/src/tutorial/projects/screenshots/Birthdayreminder.png)
 
+  ## OurTours Screenshot  
+  ![screenshot](/src/tutorial/projects/screenshots/OurTours.png)
+
+  ## Reviews Screenshot  
+  ![screenshot](/src/tutorial/projects/screenshots/Reviews.png)
+
 
