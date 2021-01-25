@@ -12,10 +12,25 @@
   background: white;
   border-radius: 5px;
   box-shadow: 1px 2px 15px rgba(140, 140, 150, 0.2);
+  padding: 1em;
 }
 
 .img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius:50%;
+}
+
+.role {
+  color: rgb(85, 169, 243);
+  font-weight: 300;
+}
+
+.review {
+  padding: 1em 5em;
+}
+
+.buttons svg{
+  width: 25px;
+  height: 25px;
 }
