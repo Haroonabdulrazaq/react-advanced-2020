@@ -59,7 +59,7 @@ const ErrorExample = () => {
             </div>
           })}
         </section>
-        <button className="btn" onClick={clearAll}>Clear all</button>
+        <button className="btn pink-btn" onClick={clearAll}>Clear all</button>
       </div>
      
   </div >
