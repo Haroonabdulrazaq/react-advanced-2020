@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './1-error-example.css'
 
 const ErrorExample = () => {
   const data = [
@@ -43,22 +44,25 @@ const ErrorExample = () => {
    
   return (
    
-    <React.Fragment >
-      <h2>5  Bithdays Today</h2>
-      <button className="btn" onClick={clearAll}>Clear all</button>
-      <section style={{width: "100vw", height: "100vh"}}> 
-        {people.map((person, index)=>{
-          return <div style={{display: "flex", flexDirection:"row", padding:"2rem"}}>
-            <img  src= {person.image}  alt={person.name} style ={{width:100, height: 100, borderRadius:"50%"}}/>
-            <div style={{margin:"2rem"}}>
-              <h3>{person.name}</h3>
-              <p>{`${person.age} years`}</p>
+    <div >
+      <div className="birthday-container">
+        <h2>5  Bithdays Today </h2>
+       
+        <section > 
+          {people.map((person, index)=>{
+            return <div style={{display: "flex", flexDirection:"row"}}>
+                <img  src= {person.image}  alt={person.name} style ={{width:100, height: 100, borderRadius:"50%"}}/>
+                <div className="name-age">
+                <h4>{person.name}</h4>
+                <p style={{textAlign:'left'}}>{`${person.age} years`}</p>
+                </div>
             </div>
-          </div>} )}
-      </section>
+          })}
+        </section>
+        <button className="btn" onClick={clearAll}>Clear all</button>
+      </div>
      
-     
-  </React.Fragment>
+  </div >
   )
 };
 

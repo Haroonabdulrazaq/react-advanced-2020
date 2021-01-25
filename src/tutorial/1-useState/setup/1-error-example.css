@@ -1,0 +1,17 @@
+body {
+ background: #f28ab2;
+ padding: 2em 0;
+}
+.birthday-container{
+  background: white;
+  width: 30em;
+  height: auto;
+  margin: 0 auto;
+  box-shadow: 1px 2px 15px rgba(140, 140, 150, 0.2);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.name-age {
+  margin: 1em 1em;
+}
