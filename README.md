@@ -37,7 +37,7 @@
 
 
 ### Projects  Done 
-  ## :camera: Screenshot  Birthday Reminder
-  ![screenshot](./src/tutorial/projects/screenshots/Birthday reminder.png)
+  ## :camera: Birthday Reminder Screenshot  
+  ![screenshot]('/src/tutorial/projects/screenshots/Birthdayreminder.png')
 
 
