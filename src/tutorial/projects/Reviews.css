@@ -45,6 +45,30 @@
   z-index: 1;
 }
 
+/* .quote {
+  width: 35px;
+  height: 35px;
+  background: rgb(85, 169, 243);
+} */
+
+.quote {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background: rgb(85, 169, 243);
+  border-radius: 50%;
+  color: white;
+  top: 25px;
+  left: 275px;
+  z-index: 3;
+}
+
+.quote svg {
+  width: 15px;
+  height: 15px;
+ 
+}
+
 .role {
   color: rgb(85, 169, 243);
   font-weight: 300;
