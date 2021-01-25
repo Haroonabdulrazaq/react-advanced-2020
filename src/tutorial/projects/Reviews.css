@@ -21,14 +21,28 @@
   border-radius: 5px;
   box-shadow: 1px 2px 15px rgba(140, 140, 150, 0.2);
   padding: 1em;
+  position: relative;
 }
 
 .img {
   /* width: 150px;
   height: 150px; */
-  width: 28% ;
-  height: 40% ; 
-  border-radius:50%;
+  width: 28%;
+  height: 40%; 
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.img-overlap {
+  width: 28%;
+  height: 38%;
+  position: absolute;
+  top: 15px;
+  right: 250px;
+  border-radius: 50%;
+  background: rgb(85, 169, 243);
+  z-index: 1;
 }
 
 .role {
@@ -43,4 +57,5 @@
 .buttons svg{
   width: 25px;
   height: 25px;
+  margin: 0, 0.5em;
 }

@@ -50,6 +50,7 @@ class Reviews extends React.Component {
       <div className="container">
         <div className="info-container">
           <img src={data[counter]["img_url"]} alt={data[counter]["title"]} className="img" />
+          <div className="img-overlap"></div>
           <h4>{data[counter]["name"]}</h4>
           <h4 className="role">{data[counter]["role"]}</h4>
           <p className="review">
