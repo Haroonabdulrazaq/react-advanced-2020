@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/11-react-router/setup';
+import Setup from './tutorial/projects/Reviews';
 
 function App() {
   return (

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.info-container {
+  width: 45em;
+  height: 30em;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 1px 2px 15px rgba(140, 140, 150, 0.2);
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  border-radius:50%;
+}

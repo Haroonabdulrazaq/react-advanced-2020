@@ -4,7 +4,9 @@ const Error = () => {
   return (
     <div>
       <h1>Oops!, An error occured</h1>
-      <p>Back to home page</p>
+      <Link to="/">
+        <p>Back to home page</p>
+      </Link>
     </div>
   );
 };

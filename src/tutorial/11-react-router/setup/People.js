@@ -5,11 +5,14 @@ const People = () => {
   const [people, setPeople] = useState(data);
   return (
     <div>
-      <h1>People Page</h1>
+      <h1>People's Page</h1>
       {people.map((person) => {
         return (
           <div key={person.id} className='item'>
             <h4>{person.name}</h4>
+            <Link to={`/person/${person.id}`}>
+              Read More
+            </Link>
           </div>
         );
       })}
