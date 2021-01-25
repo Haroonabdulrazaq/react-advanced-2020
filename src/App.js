@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/projects/Reviews';
+import Setup from './tutorial/projects/Accordion';
 
 function App() {
   return (
