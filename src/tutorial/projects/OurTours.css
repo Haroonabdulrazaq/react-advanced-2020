@@ -10,7 +10,7 @@
   padding: 10px;
 }
 .single-tour {
-  width: 40rem;
+  width: 40rem; 
   height: auto;
   margin: 0 auto;
   padding: 2rem;
@@ -28,6 +28,6 @@
 }
 
 .tour-img {
-  width: 40rem;
-  height: 30rem;
+  width: 35rem;
+  height: 20rem;
 }
