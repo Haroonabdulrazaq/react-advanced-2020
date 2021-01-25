@@ -1,6 +1,6 @@
 body {
   background: #4b145b;
-  color: white;
+  color: black;
 }
 
 .flex-container {
@@ -10,10 +10,17 @@ body {
   box-shadow: 1px 2px 15px rgba(140, 140, 150, 0.2);
   border-radius: 10px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .faq {
   width: 28%;
 }
 .question-answer {
   width: 70%;
+  height: 90%;
+  border-radius: 5px;
+  background:  #49a6e9;
+  opacity: 0.2;
 }
