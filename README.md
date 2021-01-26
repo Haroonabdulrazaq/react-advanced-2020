@@ -46,7 +46,7 @@
   ## Reviews Screenshot  
   ![screenshot](/src/tutorial/projects/screenshots/Reviews.png)
   
-  ## Reviews Accordion  
+  ## Accordion Screenshot 
   ![screenshot](/src/tutorial/projects/screenshots/Accordion.png)
 
 
