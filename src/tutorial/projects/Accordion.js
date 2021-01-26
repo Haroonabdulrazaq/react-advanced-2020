@@ -18,7 +18,7 @@ class Accordion extends Component {
       if(frequent.id === id ){
          frequent.view= true
          this.setState({
-          isClick: true
+          // isClick: true
         })
       }})
   }
@@ -28,7 +28,7 @@ class Accordion extends Component {
       if(frequent.id === id ){
          frequent.view = false
          this.setState({
-          isClick: false
+          // isClick: false
         })
       }})
   }
