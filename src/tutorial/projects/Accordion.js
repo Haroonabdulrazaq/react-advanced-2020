@@ -9,11 +9,11 @@ class Accordion extends Component {
     this.state ={
       isClick: false
     }
-    this.handleClick =  this.handleClick.bind(this)
+    this.handleOpen =  this.handleOpen.bind(this)
     this.handleClose =  this.handleClose.bind(this)
   }
 
-   handleClick(id){
+   handleOpen(id){
     Faq.find((frequent)=> {
       if(frequent.id === id ){
          frequent.view= true
@@ -46,7 +46,7 @@ class Accordion extends Component {
                 <div className="header">
                   <h4 className="question">{question} </h4> 
                   {view && <button className="btn add-btn" onClick={()=> this.handleClose(id)}> - </button>}
-                  {!view && <button className="btn add-btn" onClick={()=> this.handleClick(id)}> + </button>}
+                  {!view && <button className="btn add-btn" onClick={()=> this.handleOpen(id)}> + </button>}
                 </div>
                 <p>{view && answer}</p>
               </div>
