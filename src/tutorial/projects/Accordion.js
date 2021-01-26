@@ -10,19 +10,31 @@ class Accordion extends Component {
       isClick: false
     }
     this.handleClick =  this.handleClick.bind(this)
+    this.handleClose =  this.handleClose.bind(this)
   }
 
    handleClick(id){
     Faq.find((frequent)=> {
       if(frequent.id === id ){
          frequent.view= true
-      }else{
-        frequent.view= false
+         this.setState({
+          isClick: true
+        })
       }})
-    this.setState((prevState)=>({
-      isClick: !prevState.isClick
-    }))
   }
+
+  handleClose(id){
+    Faq.find((frequent)=> {
+      if(frequent.id === id ){
+         frequent.view = false
+         this.setState({
+          isClick: false
+        })
+      }})
+  }
+  // Put data as a state
+  // Get that one element you want to toggle
+  // Update the state to change the view and button of that one element
   render() {
     return (
       <div className="flex-container">
@@ -33,7 +45,8 @@ class Accordion extends Component {
               return <div className="each-que-ans" key={id}>
                 <div className="header">
                   <h4 className="question">{question} </h4> 
-                  <button className="btn add-btn" onClick={()=> this.handleClick(id)}>{this.state.isClick?  '-' : '+'}</button>
+                  {view && <button className="btn add-btn" onClick={()=> this.handleClose(id)}> - </button>}
+                  {!view && <button className="btn add-btn" onClick={()=> this.handleClick(id)}> + </button>}
                 </div>
                 <p>{view && answer}</p>
               </div>
