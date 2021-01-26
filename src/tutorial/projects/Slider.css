@@ -1,8 +1,23 @@
 .wrapper {
-  border: 2px solid #0f0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.previous, .next {
+  padding: 0.5em;
+  background: #ba5d2c;
+  color: white;
+  border-radius: 3px;
+} 
+
+.header {
+opacity: 0.8;
+}
+
+.slash {
+  color: #ba5d2c;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 svg{
@@ -11,16 +26,45 @@ svg{
   margin: 0, 0.5em;
 }
 
+.data-wrapper {
+  width: 60em;
+}
+
 .img {
-  width: 28%;
-  height: 40%; 
+  width: 18em;
+  height: 14em; 
   border-radius: 50%;
   position: relative;
   z-index: 2;
+  box-shadow: 1px 1px 15px  #617d98;
 }
 
-.data-wrapper {
-  width: 60em;
-  /* height: 50em; */
-  border: 1px solid rgb(0, 0, 0);
+.name {
+  font-weight: 300;
+  color: #ba5d2c;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.role {
+  color: #617d98;
+  margin: 0;
+}
+
+.review {
+  padding: 1em 2em;
+}
+
+.quote {
+  color: #ba5d2c;
+  width: 12%;
+  height: 20%;
+  text-align: center;
+  display: inline;
+  margin: 0 auto;
+}
+
+.quote svg {
+  width: 2.5em;
+  height: 2.5em;
 }
