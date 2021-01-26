@@ -1,7 +1,10 @@
 .wrapper {
+  width: 44em;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 0 auto;
+  /* transform: translateX(50px); */
 }
 .previous, .next {
   padding: 0.5em;
@@ -24,6 +27,7 @@ svg{
   width: 25px;
   height: 25px;
   margin: 0, 0.5em;
+  cursor: pointer;
 }
 
 .data-wrapper {
@@ -31,12 +35,13 @@ svg{
 }
 
 .img {
-  width: 18em;
-  height: 14em; 
+  /* width: 18em;
+  height: 14em;  */
+  width: 12em;
+  height: 10em; 
   border-radius: 50%;
-  position: relative;
-  z-index: 2;
   box-shadow: 1px 1px 15px  #617d98;
+  margin: 1em;
 }
 
 .name {
