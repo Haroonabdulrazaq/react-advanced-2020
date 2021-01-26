@@ -3,17 +3,39 @@ import './Accordion.css';
 import {Faq} from './AccordionData'
 
 class Accordion extends Component {
+  constructor(props){
+    super(props);
+
+    this.state ={
+      isClick: false
+    }
+    this.handleClick =  this.handleClick.bind(this)
+  }
+
+   handleClick(id){
+    Faq.find((frequent)=> {
+      if(frequent.id === id ){
+         frequent.view= true
+      }else{
+        frequent.view= false
+      }})
+    this.setState((prevState)=>({
+      isClick: !prevState.isClick
+    }))
+  }
   render() {
     return (
       <div className="flex-container">
-        <h2 className="faq">Frequently Asked Questions </h2>
+        <h2 className="faq">Frequently Asked Questions</h2>
         <div className="question-answer">
             {Faq.map((frequent)=>{
-              const {question, id} = frequent
+              const {question, answer, view, id} = frequent
               return <div className="each-que-ans" key={id}>
                 <div className="header">
-                  <h4 className="question">{question} </h4> <button className="btn add-btn">+</button>
+                  <h4 className="question">{question} </h4> 
+                  <button className="btn add-btn" onClick={()=> this.handleClick(id)}>{this.state.isClick?  '-' : '+'}</button>
                 </div>
+                <p>{view && answer}</p>
               </div>
             })}
         </div>
