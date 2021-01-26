@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/projects/Accordion';
+import Setup from './tutorial/projects/Slider';
 
 function App() {
   return (
