@@ -8,6 +8,11 @@
   margin: 0 auto;
 }
 
+.modal{
+ width: auto;
+ height: auto;
+}
+
 .grocery {
   width: 15em;
   margin: 0 auto;
@@ -23,6 +28,7 @@
   padding: 0.5em;
   margin: 1em auto;
 }
+
 .item:hover {
   background: rgba(34, 144, 235, 0.2) ;
 }

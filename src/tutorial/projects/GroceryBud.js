@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from 'react';
+import React, {useState, useEffect,useReducer} from 'react';
 import './GroceryBud.css';
 import {ImBin} from "react-icons/im";
 import {BsPencil} from "react-icons/bs";
@@ -8,11 +8,14 @@ import {reducer} from './groceryReducer';
 const GroceryBud = () => {
   let [item, setItem] = useState('')
   
-  const defaultState ={
+  const defaultState = {
     list: [],
     isEditing: false,
     editId: null,
-    btnContent: "Submit"
+    showModal: false,
+    btnContent: "Submit",
+    modalContent: 'Hello',
+    modalColor: 'green'
   }
 
   const [state, dispatch] = useReducer(reducer, defaultState)
@@ -20,7 +23,7 @@ const GroceryBud = () => {
   const handleSubmit =(e)=> {
     e.preventDefault();
     if(!item){
-      console.log("Item can not be Empty")
+      dispatch({type: "IS_EMPTY"})
     }else if(item && state.isEditing){ 
       dispatch({type: "EDIT", payload: item})
       dispatch({type: "NOT_EDITING"})
@@ -41,8 +44,20 @@ const GroceryBud = () => {
    setItem(newItem["item"])
   }
 
+  const closeModal=()=>{
+    dispatch({type: "CLOSE_MODAL"})
+  }
+
+  useEffect(() => {
+    setTimeout(()=>{
+     closeModal()
+    },5000)
+     
+   }, [])
+
   return (
     <div className="wrapper">
+      <div className="modal">{state.showModal && <p className="modal-text">{state.modalContent}</p> }</div>
       <h2 className="heading">Grocery Bud</h2>
       <form className='form' onSubmit={handleSubmit}>
             <input
@@ -59,7 +74,7 @@ const GroceryBud = () => {
           {state.list.map((listItem)=>{
             const {id, item} = listItem
             return <li className="item" key={id}>
-              <p >{item}</p>
+              <p>{item}</p>
               <div className="icon-button">
                 <button onClick={(e)=> handleEdit(id)}><BsPencil color="green" title="edit"/></button>
                 <button onClick={()=> handleDelete(id)}><ImBin title="delete" color="red"/></button>
