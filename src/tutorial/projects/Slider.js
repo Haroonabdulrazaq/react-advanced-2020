@@ -32,7 +32,7 @@ const Slider = (props) => {
         }
         return counter
       })
-    }, 2000)
+    }, 5000)
     return () => {
       clearInterval(slider)
     }
