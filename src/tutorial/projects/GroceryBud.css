@@ -8,6 +8,24 @@
   margin: 0 auto;
 }
 
-.heading {
-  border: 1px solid red;
+.grocery {
+  width: 15em;
+  margin: 0 auto;
 }
+
+.form {
+  margin-bottom: 1em;
+}
+.unordered-list {
+  margin: 0 auto;
+}
+.item {
+  padding: 0.5em;
+  margin: 1em auto;
+}
+.item:hover {
+  background: rgba(34, 144, 235, 0.2) ;
+}
+/* .icon-button > * {
+  padding: 1em;
+} */
