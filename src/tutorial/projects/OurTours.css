@@ -19,6 +19,9 @@
 
 .tour-text {
   text-align: center;
+  display: inline;
+  margin: 0;
+  padding: 1em;
 }
 
 
@@ -30,4 +33,10 @@
 .tour-img {
   width: 35rem;
   height: 20rem;
+}
+
+.link {
+  cursor: pointer;
+  color: rgba(0, 119, 255, 0.8);
+  text-align: right;
 }

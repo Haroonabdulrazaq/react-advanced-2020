@@ -4,12 +4,13 @@ const SingleQuestion = (props) => {
   let [showInfo, setShowInfo] = useState(false)
   return (
     <div>
-      <header>
+      <header style={{display:"inline"}}>
         {props.question}
-      </header>
-      <button onClick={()=> setShowInfo(!showInfo)}> 
+        <button className="btn" onClick={()=> setShowInfo(!showInfo)}> 
         {showInfo ? '-': '+' }
       </button>
+      </header>
+      
       <p>
         {showInfo && props.answer }
       </p>
