@@ -1,19 +1,57 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import './GroceryBud.css';
 import {ImBin} from "react-icons/im";
 import {BsPencil} from "react-icons/bs";
 
+
+const reducer=(state, action)=>{
+  switch (action.type) {
+    case "ADD_ITEM":
+    return {
+      ...state,
+      list: [...state.list, action.payload]
+    }
+    case "DELETE_ITEM":
+      let newList = state.list.filter((item)=> item.id !== action.payload)
+      return {
+        ...state,
+        list: newList
+      }
+    case "CLEAR_ITEM":
+      return {
+        ...state,
+        list: []
+      }
+  
+    default:
+      return "Action type mismatch" 
+ 
+  }
+
+}
+
+
 const GroceryBud = () => {
   let [item, setItem] = useState('')
-  let [list, setList] = useState([])
+  // let [list, setList] = useState([])
   let [isEditing, setIsEditing] = useState(false) 
   let [editId, setEditId] = useState(null)
+  let [btnContent, setBtnContent] = useState("Submit")
+  
+  const defaultState ={
+    list: [],
+    isEditing: false,
+    edited: null,
+    btnContent: "Submit"
+  }
 
-  const handleSubmit =(e)=>{
+  const [state, dispatch] = useReducer(reducer, defaultState)
+
+  const handleSubmit =(e)=> {
     e.preventDefault();
      if(item && isEditing){ 
-      setList(
-         list.map((listItem) => {
+      state.list(
+         state.list.map((listItem) => {
           if (listItem.id === editId) {
             return { ...listItem, item: item };
           }
@@ -22,22 +60,26 @@ const GroceryBud = () => {
       );
       setEditId(null)
       setIsEditing(false);
+      setBtnContent("Submit")
     }else{
       let newItem = { id: new Date().getTime().toString(), item: item }
-      setList([...list, newItem ])
+      // setList([...list, newItem ])
+      dispatch({type:"ADD_ITEM", payload: newItem})
     }
     setItem('')
   }
 
   const handleDelete= (id)=> {
-    let newList = list.filter((item)=> item.id !== id)
-    setList(newList)
+    // let newList = list.filter((item)=> item.id !== id)
+    // setList(newList)
+    dispatch({type: "DELETE_ITEM", payload: id})
   }
 
   const handleEdit=(id)=> {
     setEditId(id)
     setIsEditing(true)
-   const newItem = list.find((item)=> item.id === id)
+    setBtnContent("Edit")
+   const newItem = state.list.find((item)=> item.id === id)
    setItem(newItem["item"])
   }
 
@@ -51,12 +93,12 @@ const GroceryBud = () => {
               value={item}
               placeholder="E.g Boiler"
               onChange={(e)=> setItem(e.target.value)}/>
-          <button >Submit</button>
+          <button >{btnContent}</button>
         </form>
 
         <article>
           <ol className="unordered-list">
-          {list.map((listItem)=>{
+          {state.list.map((listItem)=>{
             const {id, item} = listItem
             return <li className="item" key={id}>
               <p >{item}</p>
@@ -66,7 +108,7 @@ const GroceryBud = () => {
               </div>
             </li>
           })}
-          <button className="btn" onClick={()=> setList([])}> Clear items</button>
+          <button className="btn" onClick={()=> dispatch({type:"CLEAR_ITEM"})}> Clear items</button>
           </ol>
           
         </article>
