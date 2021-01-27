@@ -6,23 +6,39 @@ import {BsPencil} from "react-icons/bs";
 const GroceryBud = () => {
   let [item, setItem] = useState('')
   let [list, setList] = useState([])
+  let [isEditing, setIsEditing] = useState(false) 
+  let [editId, setEditId] = useState(null)
 
   const handleSubmit =(e)=>{
-    e.preventDefault()
-    let newItem ={
-                  id: new Date().getTime().toString(),
-                  item: item
-                }
-                console.log(newItem)
-    setList([ ...list,
-      newItem
-    ])
+    e.preventDefault();
+     if(item && isEditing){ 
+      setList(
+         list.map((listItem) => {
+          if (listItem.id === editId) {
+            return { ...listItem, item: item };
+          }
+          return listItem;
+        }) 
+      );
+      setEditId(null)
+      setIsEditing(false);
+    }else{
+      let newItem = { id: new Date().getTime().toString(), item: item }
+      setList([...list, newItem ])
+    }
     setItem('')
   }
 
   const handleDelete= (id)=> {
     let newList = list.filter((item)=> item.id !== id)
     setList(newList)
+  }
+
+  const handleEdit=(id)=> {
+    setEditId(id)
+    setIsEditing(true)
+   const newItem = list.find((item)=> item.id === id)
+   setItem(newItem["item"])
   }
 
   return (
@@ -44,11 +60,10 @@ const GroceryBud = () => {
             const {id, item} = listItem
             return <li className="item" key={id}>
               <p >{item}</p>
-              <button className="icon-button">
-                <span onClick={()=> handleDelete(id)}><BsPencil color="green" title="edit"/></span>
-                <span><ImBin title="delete" color="red"/></span>
-               
-              </button>
+              <div className="icon-button">
+                <button onClick={(e)=> handleEdit(id)}><BsPencil color="green" title="edit"/></button>
+                <button onClick={()=> handleDelete(id)}><ImBin title="delete" color="red"/></button>
+              </div>
             </li>
           })}
           <button className="btn" onClick={()=> setList([])}> Clear items</button>

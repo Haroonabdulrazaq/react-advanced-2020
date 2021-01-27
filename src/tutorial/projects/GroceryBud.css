@@ -26,6 +26,6 @@
 .item:hover {
   background: rgba(34, 144, 235, 0.2) ;
 }
-button span{
+.icon-button button{
   padding-right: 1.2em;
 } 
