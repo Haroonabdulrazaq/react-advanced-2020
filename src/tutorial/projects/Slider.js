@@ -4,18 +4,18 @@ import './Slider.css';
 
 const Slider = (props) => {
   let [counter, setCounter] = useState(0)
-  // let [timer, setTimer] = useState(5000)
+
 
   const handlePrev=()=>{
     if(counter === 0){
-      setCounter(3)
-      return
+      setCounter(data.length -1 )
+      return 
     }
     setCounter(counter - 1)
   }
 
   const handleNext=()=>{
-    if(counter === 3){
+    if(counter === data.length -1 ){
       setCounter(0)
       return 
     }
@@ -27,12 +27,12 @@ const Slider = (props) => {
     let slider = setTimeout(() => {
       setCounter((oldCounter) => {
         let counter = oldCounter + 1
-        if (counter === 4) {
+        if (counter === data.length ) {
           counter = 0
         }
         return counter
       })
-    }, 5000)
+    }, 2000)
     return () => {
       clearInterval(slider)
     }
