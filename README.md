@@ -49,4 +49,7 @@
   ## Accordion Screenshot 
   ![screenshot](/src/tutorial/projects/screenshots/Accordion.png)
 
+  ## Slider Review Screenshot 
+  ![screenshot](/src/tutorial/projects/screenshots/SliderReviews.png)
+
 

@@ -4,6 +4,15 @@
   justify-content: center;
   align-content: center;
 }
+
+.underline {
+  width: 70px;
+  height: 5px;
+  background:  #49a6e9;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
 .head-price {
   display: flex;
   flex-direction: row;
@@ -26,14 +35,12 @@
   height: auto;
   margin: 0 auto;
   padding: 2rem;
-  
 }
 
 .tour-text {
   text-align: center;
   display: inline;
   margin: 0;
-  padding: 1em;
 }
 
 .tour-img {

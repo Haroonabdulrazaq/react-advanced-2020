@@ -15,6 +15,7 @@ const OurTours = () => {
   return (
     <section className="all-tour">
       <h2 className="title">Our Tours</h2>
+      <div className="underline"></div>
       {tourData.map((tour)=>{
       return <div className="single-tour" >
           <SingleTour key={tour.id} {...tour} ></SingleTour>
