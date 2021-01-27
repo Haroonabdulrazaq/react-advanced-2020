@@ -5,20 +5,20 @@
   align-content: center;
 }
 .head-price {
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 1em;
   align-items: center;
 }
-/* .header {
-  display: inline;
-} */
+
 .tour-price{
-  background: rgba(0, 119, 255, 0.8);
+  background: white;
+  outline: rgb(0, 119, 255);
   border-radius: 5px;
   padding: 10px;
+  /* color: rgb(0, 119, 255); */
+  color: red;
 }
 
 .single-tour {
