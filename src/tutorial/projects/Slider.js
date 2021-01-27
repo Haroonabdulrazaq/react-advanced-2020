@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {data} from './reviewData';
-import './Slider.css'
+import './Slider.css';
 
 const Slider = (props) => {
   let [counter, setCounter] = useState(0)
@@ -24,14 +24,18 @@ const Slider = (props) => {
   
 
   useEffect(() => {
-    setTimeout(()=>{
-      if(counter === 3){
-        setCounter(0);
-        return
-      }
-      setCounter(counter + 1)
-    },5000)
-  
+    let slider = setTimeout(() => {
+      setCounter((oldCounter) => {
+        let counter = oldCounter + 1
+        if (counter === 4) {
+          counter = 0
+        }
+        return counter
+      })
+    }, 5000)
+    return () => {
+      clearInterval(slider)
+    }
   }, [counter])
 
 
