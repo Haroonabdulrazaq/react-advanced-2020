@@ -11,11 +11,39 @@ const reducer=(state, action)=>{
       ...state,
       list: [...state.list, action.payload]
     }
+    case "EDIT":
+      let editedList = state.list.map((listItem)=>{ 
+        if(listItem.id === state.editId){
+            return {...listItem, item: action.payload}
+        }
+          return listItem;
+      }) 
+    return {
+      ...state,
+      isEditing: true,
+      btnContent: "Edit",
+      editId: action.payload,
+      list: editedList
+    }
+    case "IS_EDITING":
+    return {
+      ...state,
+      isEditing: true,
+      btnContent: "Edit",
+      editId: action.payload
+    }
+    case "NOT_EDITING":
+    return {
+      ...state,
+      isEditing: false,
+      btnContent: "Submit",
+      editId: null
+    }
     case "DELETE_ITEM":
       let newList = state.list.filter((item)=> item.id !== action.payload)
       return {
         ...state,
-        list: newList
+        list: newList,
       }
     case "CLEAR_ITEM":
       return {
@@ -33,15 +61,14 @@ const reducer=(state, action)=>{
 
 const GroceryBud = () => {
   let [item, setItem] = useState('')
-  // let [list, setList] = useState([])
-  let [isEditing, setIsEditing] = useState(false) 
-  let [editId, setEditId] = useState(null)
-  let [btnContent, setBtnContent] = useState("Submit")
+  // let [isEditing, setIsEditing] = useState(false) 
+  // let [editId, setEditId] = useState(null)
+  // let [btnContent, setBtnContent] = useState("Submit")
   
   const defaultState ={
     list: [],
     isEditing: false,
-    edited: null,
+    editId: null,
     btnContent: "Submit"
   }
 
@@ -49,36 +76,32 @@ const GroceryBud = () => {
 
   const handleSubmit =(e)=> {
     e.preventDefault();
-     if(item && isEditing){ 
-      state.list(
-         state.list.map((listItem) => {
-          if (listItem.id === editId) {
-            return { ...listItem, item: item };
-          }
-          return listItem;
-        }) 
-      );
-      setEditId(null)
-      setIsEditing(false);
-      setBtnContent("Submit")
+    if(!item){
+      console.log("Item can not be Empty")
+    }else if(item && state.isEditing){ 
+      // state.list(
+      //    state.list.map((listItem) => {
+      //     if (listItem.id === state.editId) {
+      //       return { ...listItem, item: item };
+      //     }
+      //     return listItem;
+      //   }) 
+      // );
+      dispatch({type: "EDIT", payload: item})
+      dispatch({type: "NOT_EDITING"})
     }else{
       let newItem = { id: new Date().getTime().toString(), item: item }
-      // setList([...list, newItem ])
       dispatch({type:"ADD_ITEM", payload: newItem})
     }
     setItem('')
   }
 
   const handleDelete= (id)=> {
-    // let newList = list.filter((item)=> item.id !== id)
-    // setList(newList)
     dispatch({type: "DELETE_ITEM", payload: id})
   }
 
   const handleEdit=(id)=> {
-    setEditId(id)
-    setIsEditing(true)
-    setBtnContent("Edit")
+    dispatch({type: "IS_EDITING", payload: id})
    const newItem = state.list.find((item)=> item.id === id)
    setItem(newItem["item"])
   }
@@ -93,7 +116,7 @@ const GroceryBud = () => {
               value={item}
               placeholder="E.g Boiler"
               onChange={(e)=> setItem(e.target.value)}/>
-          <button >{btnContent}</button>
+          <button >{state.btnContent}</button>
         </form>
 
         <article>
