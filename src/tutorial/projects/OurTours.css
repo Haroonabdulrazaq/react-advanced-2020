@@ -14,11 +14,11 @@
 
 .tour-price{
   background: white;
-  outline: rgb(0, 119, 255);
+  border: 1px solid rgba(0, 119, 255, 0.5); 
   border-radius: 5px;
   padding: 10px;
-  /* color: rgb(0, 119, 255); */
-  color: red;
+  font-weight: 500;
+  color: rgb(0, 119, 255);
 }
 
 .single-tour {
@@ -34,12 +34,6 @@
   display: inline;
   margin: 0;
   padding: 1em;
-}
-
-
-.tour-price {
-  color: white;
-  font-weight: 500;
 }
 
 .tour-img {
