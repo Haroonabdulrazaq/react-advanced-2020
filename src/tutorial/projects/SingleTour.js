@@ -10,7 +10,10 @@ const SingleTour = (props) => {
       <img className="tour-img" src={img_url} alt={heading}/>
           <footer>
             <div className="tour-info">
-            <h4 >{heading}</h4> <span className="tour-price">$ {price}</span>
+            <div className="head-price">
+              <h4 className="header">{heading}</h4> 
+              <span className="tour-price">$ {price}</span>
+            </div>
             <p className="tour-text">{ showInfo ?  text : text.split(" ").slice(0,25).join(" ")}</p>
             <p className="link" onClick={()=> setShowInfo(!showInfo)}>{showInfo? "Read less": "Read more"}</p>
             </div>
