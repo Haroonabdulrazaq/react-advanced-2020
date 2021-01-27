@@ -1,0 +1,13 @@
+.wrapper {
+  width: 55em;
+  min-height: 30em;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 1px 2px 15px rgba(140, 140, 150, 0.2);
+  padding: 1em;
+  margin: 0 auto;
+}
+
+.heading {
+  border: 1px solid red;
+}
