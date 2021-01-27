@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/projects/OurTours';
+import Setup from './tutorial/projects/GroceryBud';
 
 function App() {
   return (
