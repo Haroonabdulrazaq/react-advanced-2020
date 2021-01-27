@@ -1,5 +1,5 @@
 .wrapper {
-  width: 55em;
+  min-width: 55em;
   min-height: 30em;
   background: white;
   border-radius: 10px;
@@ -26,6 +26,6 @@
 .item:hover {
   background: rgba(34, 144, 235, 0.2) ;
 }
-/* .icon-button > * {
-  padding: 1em;
-} */
+button span{
+  padding-right: 1.2em;
+} 

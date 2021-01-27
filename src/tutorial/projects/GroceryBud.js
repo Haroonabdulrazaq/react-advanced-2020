@@ -20,6 +20,11 @@ const GroceryBud = () => {
     setItem('')
   }
 
+  const handleDelete= (id)=> {
+    let newList = list.filter((item)=> item.id !== id)
+    setList(newList)
+  }
+
   return (
     <div className="wrapper">
       <h2 className="heading">Grocery Bud</h2>
@@ -28,24 +33,26 @@ const GroceryBud = () => {
               type='text'
               name='item'
               value={item}
+              placeholder="E.g Boiler"
               onChange={(e)=> setItem(e.target.value)}/>
           <button >Submit</button>
         </form>
 
         <article>
-          <ul className="unordered-list">
+          <ol className="unordered-list">
           {list.map((listItem)=>{
             const {id, item} = listItem
             return <li className="item" key={id}>
               <p >{item}</p>
-
               <button className="icon-button">
-                <BsPencil color="green" title="edit"/>
-                <ImBin title="delete" color="red"/>
+                <span onClick={()=> handleDelete(id)}><BsPencil color="green" title="edit"/></span>
+                <span><ImBin title="delete" color="red"/></span>
+               
               </button>
             </li>
           })}
-          </ul>
+          <button className="btn" onClick={()=> setList([])}> Clear items</button>
+          </ol>
           
         </article>
     </div>
