@@ -61,9 +61,6 @@ const reducer=(state, action)=>{
 
 const GroceryBud = () => {
   let [item, setItem] = useState('')
-  // let [isEditing, setIsEditing] = useState(false) 
-  // let [editId, setEditId] = useState(null)
-  // let [btnContent, setBtnContent] = useState("Submit")
   
   const defaultState ={
     list: [],
@@ -79,14 +76,6 @@ const GroceryBud = () => {
     if(!item){
       console.log("Item can not be Empty")
     }else if(item && state.isEditing){ 
-      // state.list(
-      //    state.list.map((listItem) => {
-      //     if (listItem.id === state.editId) {
-      //       return { ...listItem, item: item };
-      //     }
-      //     return listItem;
-      //   }) 
-      // );
       dispatch({type: "EDIT", payload: item})
       dispatch({type: "NOT_EDITING"})
     }else{
