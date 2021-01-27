@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/projects/Slider';
+import Setup from './tutorial/projects/Question';
 
 function App() {
   return (
