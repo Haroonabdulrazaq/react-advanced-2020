@@ -4,14 +4,17 @@ export const reducer=(state, action)=>{
     return {
       ...state,
       list: [...state.list, action.payload],
+      modalColor: 'green',
       showModal: true,
       modalContent: "Item Added"
     }
     case "IS_EMPTY":
     return {
       ...state,
+      modalColor: 'purple',
       showModal: true,
-      modalContent: "Please fill in the input field"
+      modalContent: "Item cannot be Empty",
+      
     }
     case "EDIT":
       let editedList = state.list.map((listItem)=>{ 
@@ -26,6 +29,7 @@ export const reducer=(state, action)=>{
       btnContent: "Edit",
       editId: action.payload,
       list: editedList,
+      modalColor: 'green',
       showModal: true,
       modalContent: "Item Edited"
     }
@@ -41,8 +45,7 @@ export const reducer=(state, action)=>{
       ...state,
       isEditing: false,
       btnContent: "Submit",
-      editId: null,
-
+      editId: null
     } 
     case  "CLOSE_MODAL":
     return {
@@ -54,13 +57,18 @@ export const reducer=(state, action)=>{
       return {
         ...state,
         list: newList,
+        modalColor: 'red',
         showModal: true,
-        modalContent: "Item Added"
+        modalContent: "Item Deleted",
       }
     case "CLEAR_ITEM":
       return {
         ...state,
-        list: []
+        list: [],
+        modalColor: 'red',
+        showModal: true,
+        modalContent: "All Item cleared",
+
       }
   
     default:

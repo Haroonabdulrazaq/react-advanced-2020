@@ -14,7 +14,7 @@ const GroceryBud = () => {
     editId: null,
     showModal: false,
     btnContent: "Submit",
-    modalContent: 'Hello',
+    modalContent: '',
     modalColor: 'green'
   }
 
@@ -49,15 +49,19 @@ const GroceryBud = () => {
   }
 
   useEffect(() => {
-    setTimeout(()=>{
+    setInterval(()=>{
      closeModal()
     },5000)
      
-   }, [])
+   },[])
 
+   let modalStyle ={
+     border: `1px solid ${state.modalColor}`,
+     color: state.modalColor
+   }
   return (
     <div className="wrapper">
-      <div className="modal">{state.showModal && <p className="modal-text">{state.modalContent}</p> }</div>
+      {state.showModal && <div style={modalStyle} className="modal"> {state.modalContent}</div> }
       <h2 className="heading">Grocery Bud</h2>
       <form className='form' onSubmit={handleSubmit}>
             <input
