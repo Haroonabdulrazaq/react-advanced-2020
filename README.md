@@ -52,7 +52,7 @@
   ## Slider Review Screenshot 
   ![screenshot](/src/tutorial/projects/screenshots/SliderReviews.png)
 
-  ## Slider Review Screenshot 
+  ## GroceryBud Screenshot 
   ![screenshot](/src/tutorial/projects/screenshots/GroceryBud.png)
 
 
