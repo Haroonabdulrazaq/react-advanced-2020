@@ -1,7 +1,7 @@
 export const Faq = [
   {    
     id: 1,
-    question: "Do I have to allow the use of cookes? ",
+    question: "Do I have to allow the use of cookies? ",
     answer: "Unicorn vinyl poutine brooklyn, next level direct trade iceland. Shaman copper mug church-key coloring book, whatever poutine normcore fixie cred kickstarter post-ironic street art.",
     view: false
   },
