@@ -56,8 +56,9 @@ const GroceryBud = () => {
    },[])
 
    let modalStyle ={
-     border: `1px solid ${state.modalColor}`,
-     color: state.modalColor
+     border: `0.5px solid ${state.modalColor}`,
+     color: state.modalColor,
+     fontWeight: "300"
    }
   return (
     <div className="wrapper">
