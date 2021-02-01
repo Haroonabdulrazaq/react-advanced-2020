@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/projects/sidebar/Navbar';
+import Setup from './tutorial/projects/sidebar';
 
 function App() {
   return (
