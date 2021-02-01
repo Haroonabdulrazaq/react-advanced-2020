@@ -4,6 +4,8 @@ import Home from './Home';
 import Team from './Team';
 import Calendar from './Calendar';
 import Navbar from './Navbar';
+import Project from './Project';
+import Document from './Document';
 import Error from './Error';
 import './sidenav.css';
 
@@ -23,8 +25,14 @@ const SideNav = ({showNav}) => {
              <Route exact path="/team">
               <Team />
             </Route>
+            <Route path="/project">
+              <Project />
+            </Route>
             <Route path="/Calendar">
               <Calendar />
+            </Route>
+            <Route path="/document">
+              <Document />
             </Route>
             <Route path="/*">
               <Error />

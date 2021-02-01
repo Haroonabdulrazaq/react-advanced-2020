@@ -11,19 +11,19 @@ const Navbar = () => {
       <h3 className="name"><GiNinjaHead/> Haroon Abdulrazaq</h3>
       <ul className="list">
         <li className="list-item">
-        <AiOutlineHome/> <Link to='/'> Home</Link>
+          <Link to='/'> <AiOutlineHome/> Home</Link>
         </li>
         <li className="list-item">
-        <AiOutlineTeam/> <Link to="/team"> Team</Link>
+          <Link to="/team"><AiOutlineTeam/> Team</Link>
         </li>
         <li className="list-item">
-        <AiFillFolderOpen/>  <Link to="/calendar">Project</Link>
+          <Link to="/project"><AiFillFolderOpen/>Project</Link>
         </li>
         <li className="list-item">
-        <AiTwotoneCalendar/><Link to="/calendar"> Calendar</Link>
+          <Link to="/calendar"><AiTwotoneCalendar/> Calendar</Link>
         </li>
         <li className="list-item">
-        <GrDocumentVerified/> <Link to="/calendar"> Docs</Link>
+          <Link to="/document"><GrDocumentVerified/> Docs</Link>
         </li>
       </ul>    
     </div>
