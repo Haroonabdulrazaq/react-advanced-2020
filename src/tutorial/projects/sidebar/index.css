@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 1em;
+}
+
+.hamburger {
+ text-align: left;
+  cursor: pointer;
+  color: #49a6e9;
+}

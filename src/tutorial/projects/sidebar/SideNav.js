@@ -1,31 +1,37 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
-import About from './About';
+import Team from './Team';
 import Calendar from './Calendar';
 import Navbar from './Navbar';
 import Error from './Error';
+import './sidenav.css';
+
 
 const SideNav = ({showNav}) => {
- 
+
   return (
     <div>
       <Router>
-       {showNav && <Navbar />}
-          <Switch>
-          <Route exact path="/">
-            <Home/>
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route path="/Calendar">
-            <Calendar />
-          </Route>
-          <Route path="/*">
-            <Error />
-          </Route>
-        </Switch>
+        <div className="wrapper">
+          <div>{showNav && <Navbar /> }</div>
+        <div className="content-wrapper">
+         <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+             <Route exact path="/team">
+              <Team />
+            </Route>
+            <Route path="/Calendar">
+              <Calendar />
+            </Route>
+            <Route path="/*">
+              <Error />
+            </Route>
+          </Switch>
+        </div>
+        </div>
       </Router>
     </div>
   )
