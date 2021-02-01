@@ -6,11 +6,12 @@ import Calendar from './Calendar';
 import Navbar from './Navbar';
 import Error from './Error';
 
-const SideNav = () => {
+const SideNav = ({showNav}) => {
+ 
   return (
     <div>
       <Router>
-        <Navbar/>
+       {showNav && <Navbar />}
           <Switch>
           <Route exact path="/">
             <Home/>
