@@ -1,5 +1,5 @@
 .wrapper {
-  width: 45em;
+  min-width: 15em;
   min-height: 30em;
   background: white;
   border-radius: 10px;
