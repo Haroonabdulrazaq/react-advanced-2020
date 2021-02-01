@@ -8,10 +8,11 @@ import './index.css'
 
 const ReactRouterSetup = () => {
   let [showNav, setShowNav] = useState(false);
+ 
   return (
     <div className="">
       <div className='hamburger' onClick={()=> setShowNav(!showNav)}>
-        {showNav? <AiFillCloseCircle size="50px" /> : <GiHamburgerMenu size="50px"/> }
+        {showNav? <AiFillCloseCircle size="35px" /> : <GiHamburgerMenu size="35px"/> }
       </div>
       <SideNav showNav={showNav} />
     </div>

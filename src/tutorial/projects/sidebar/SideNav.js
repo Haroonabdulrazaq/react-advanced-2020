@@ -16,7 +16,7 @@ const SideNav = ({showNav}) => {
     <div>
       <Router>
         <div className="wrapper">
-          <div>{showNav && <Navbar /> }</div>
+          <div className="">{showNav && <Navbar /> }</div>
         <div className="content-wrapper">
          <Switch>
             <Route exact path="/">

@@ -5,4 +5,10 @@
 .content-wrapper {
   width: 100%;
   height: auto;
+  position: absolute;
+}
+
+.slide-in-left {
+  translate: 50px;
+  transition: all 5s ease;
 }
