@@ -12,3 +12,11 @@
   translate: 50px;
   transition: all 5s ease;
 }
+
+.modal-container {
+  margin: 15em auto;
+}
+ 
+.modal-btn {
+ position: absolute
+}  

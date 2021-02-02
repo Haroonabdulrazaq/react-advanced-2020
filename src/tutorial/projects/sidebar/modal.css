@@ -1,4 +1,19 @@
-.modal-wrapper {
-  width: 300px;
-  height: 300px;
+.modal {
+  width: 0;
+  margin: 22vh -15em;
+} 
+ .modal-wrapper {
+  width: 450px;
+  height: 150px;
+  border-radius: 10px;
+  position: absolute;
+  margin: 0 27em;
+  background: white;
+  z-index: 10;   
+  box-shadow: 1px 1px 15px rgba(17, 16, 16, 0.303);
+} 
+
+.modal-btn {
+   
+   position: absolute;
 }
