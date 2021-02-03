@@ -1,5 +1,5 @@
 import React from 'react'
-import Setup from './tutorial/projects/sidebar';
+import Setup from './tutorial/projects/cocktail/context.js';
 
 function App() {
   return (

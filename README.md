@@ -55,7 +55,5 @@
   ## GroceryBud Screenshot 
   ![screenshot](/src/tutorial/projects/screenshots/GroceryBud.png)
 
-  ## Sidebar & modal. Screenshot 
+  ## Sidebar & modal Screenshot 
   ![screenshot](/src/tutorial/projects/screenshots/Sidebar&modal.png)
-
-
