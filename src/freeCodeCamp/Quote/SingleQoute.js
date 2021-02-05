@@ -31,4 +31,4 @@ function SingleQoute() {
   );
 }
 
-export default SingleQoute
+export default SingleQoute;

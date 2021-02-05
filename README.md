@@ -58,6 +58,9 @@
   ## Sidebar & modal Screenshot 
   ![screenshot](/src/tutorial/projects/screenshots/Sidebar&modal.png)
 
+  ## RandomQuoteGenrator Screenshot 
+  ![screenshot](/src/tutorial/projects/screenshots/RandomQuoteGenrator.png)
+
   ## Cocktail Screenshot
 - Got Complicated
 
