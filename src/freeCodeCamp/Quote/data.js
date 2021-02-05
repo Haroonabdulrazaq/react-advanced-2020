@@ -40,14 +40,13 @@ export const data =[
     color:"#FE28A2"
   },
   {
-    quote:"You can't get a result, if you are not consistent",
+    quote:"You can't get a result, if you are not consistent enough.",
     author: "Haroon Abdulrazaq",
     color:"#6495ED"
   },
   {
-    quote: "I am not the type who practice a thousand kick once, but the type who practice a kick a thousand times",
+    quote: "I am not the type who practice a thousand kick once, but the type who practice a kick a thousand times.",
     author: "Bruce lee",
     color: "#00FA9A"
   }
-
 ]

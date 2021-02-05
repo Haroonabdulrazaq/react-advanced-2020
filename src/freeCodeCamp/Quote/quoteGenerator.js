@@ -1,10 +1,9 @@
 import React from 'react';
+import SingleQoute from './SingleQoute';
 
 const quoteGenerator = () => {
   return (
-    <div>
-      <h2>Quote Generator</h2>
-    </div>
+    <SingleQoute />
   )
 }
 
