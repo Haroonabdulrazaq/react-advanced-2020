@@ -1,0 +1,18 @@
+#btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  margin: 0 auto;
+  border: 1px solid #0f0;
+  text-align: center;
+}
+.drum-pad {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  padding: 1em;
+  border: 1px solid #00f;
+  margin: 0.5em 1.5em;
+}

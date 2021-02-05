@@ -1,5 +1,5 @@
 import React from 'react';
-import Setup from './freeCodeCamp/Drum Machine/Drum';
+import Setup from './freeCodeCamp/Markdown/Mark';
 
 function App() {
   return (
