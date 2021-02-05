@@ -1,5 +1,5 @@
 import React from 'react';
-import Setup from './freeCodeCamp/Quote/quoteGenerator';
+import Setup from './freeCodeCamp/Drum Machine/Drum';
 
 function App() {
   return (
