@@ -1,0 +1,37 @@
+.calc-container {
+  border: 1px solid #0f0;
+  margin: 0 auto;
+  
+}
+#display {
+  margin: 0 auto;
+  width: 50%;
+  height: 5em;
+  border: 1px solid #0ff;
+}
+.btn-container {
+  background: #ddf;
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #444;
+  width: 80px;
+  height: 80px;
+  font-size: 1.2em;
+  text-align: center;
+}
+#equals {
+  width: 120px;
+}
+
+#clear {
+  background: rgba($color: #f31818, $alpha: 0.5) 
+}
+ 
