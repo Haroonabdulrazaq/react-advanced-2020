@@ -5,14 +5,29 @@
 }
 #display {
   margin: 0 auto;
-  width: 50%;
+  padding: 1em;
+  width: 40%;
   height: 5em;
   border: 1px solid #0ff;
+  font-size: 1.5em;
+  font-family:'Digital';
+  text-align: end;
+  
+  input {
+    width: 100%;
+    font-size: 1.2em;
+    text-align: left;
+    background: inherit;
+    border: none;
+    font-family:'Digital';
+  }
 }
+
+ 
 .btn-container {
   background: #ddf;
   margin: 0 auto;
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -22,13 +37,15 @@
 
 .btn {
   background: #444;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   font-size: 1.2em;
   text-align: center;
+  margin: 1px;
 }
+
 #equals {
-  width: 120px;
+  width: 160px;
 }
 
 #clear {

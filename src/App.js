@@ -1,5 +1,5 @@
 import React from 'react';
-import Setup from './freeCodeCamp/Calculator';
+import Setup from './freeCodeCamp/Calculator/MyCalculator';
 
 function App() {
   return (
